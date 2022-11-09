@@ -30,11 +30,12 @@ export default {
       let reqUrl = baseUrl + lang + '/collection?key=' + apiKey + '&involvedMaker=' + this.artist.replaceAll(' ', '+'); 
       // console.log(reqUrl);
 
+      this.$emit('update:artworks', { loading: true });
       fetch(reqUrl)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data.artObjects);
-          this.$emit('update:artworks', data.artObjects);
+          console.log(data);
+          this.$emit('update:artworks', data);
         });
           
       }
