@@ -91,7 +91,7 @@ a {
 }
 
 a:hover {
-  color: gray;
+  color: lighten(#000, 40%);
   transition: 0.3s;
 }
 

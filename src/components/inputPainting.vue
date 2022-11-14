@@ -1,15 +1,6 @@
 <template>
     <input type="text" placeholder="Artist Full Name" v-model="artist"/>
-    <!-- <input type="number" min="0" placeholder="Year"/> -->
-    <!-- <select>
-      <option>Portrait</option>
-      <option>Landscape</option>
-      <option>History</option>
-      <option>Other</option>
-    </select> -->
-    <button @click="getPainting">Search Collection</button>
-    <!--In Vue you can add a function with @click instead of JS getElementById and addEventListener etc.-->
- 
+    <button @click="getPainting">Search Collection</button> 
 </template>
 
 <script>
@@ -72,8 +63,8 @@ input, button, select {
 
 input, select {
   background-color: #1e1e1e;
-  color: white;
-  border: 1px solid white;
+  color: #fff;
+  border: 1px solid #fff;
   padding: 10px;
   width: 240px;
 }
@@ -81,13 +72,13 @@ input, select {
 button {
   background: $button;
   color: #fff;
-  padding: 10px 36px;
+  padding: 10px;
   border: 0;
   transition: 0.3s;
   cursor: pointer; 
   margin-bottom: 0;
   font-weight: 600;
-  width: 260px;
+  width: 261px;
 }
 
 button:hover {
