@@ -4,7 +4,10 @@
         <ul>
             <li v-for="(artwork, index) in artworks.artObjects" v-bind:key="index">
                 <a v-bind:href="artwork.links.web" target="_blank"><h3>{{ artwork.longTitle }}</h3></a>         
-                <a v-bind:href="artwork.links.web" target="_blank"><img v-bind:src="artwork.webImage.url"/></a>
+                <a v-bind:href="artwork.links.web" target="_blank">
+                    <img v-if="artwork.hasImage" v-bind:src="artwork.webImage.url"/>
+                    <img v-else src="../assets/building.png" alt="Image not available"/>
+                </a>
             </li>    
         </ul>
     </div>

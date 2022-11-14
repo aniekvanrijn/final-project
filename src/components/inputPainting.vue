@@ -1,6 +1,6 @@
 <template>
     <input type="text" placeholder="Artist Full Name" v-model="artist"/>
-    <button @click="getPainting">Search Collection</button> 
+    <button @click="getPainting" :disabled="artist.length == 0">Search Collection</button> 
 </template>
 
 <script>
@@ -86,5 +86,12 @@ button:hover {
   color: #000;
   background-color: #fff;
   transition: 0.3s;
+}
+
+button[disabled],
+button[disabled]:hover {
+  background: darken($button, 10%);
+  color: darken(#fff, 10%);
+  opacity: 0.8;
 }
 </style>
