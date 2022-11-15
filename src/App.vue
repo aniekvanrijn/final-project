@@ -1,10 +1,9 @@
 <template>
     <div id="header">
-      <img src="./assets/building.png" style="width: 120px; margin-top: 20px;"/><br/>
-      <img src="./assets/rijksmuseum-white.png" style="padding: 30px 0 0; "/>
+      <a href="http://localhost:8080/"><img src="./assets/building.png" style="width: 120px; margin-top: 20px;"/></a><br/>
+      <a href="http://localhost:8080/"><img src="./assets/rijksmuseum-white.png" style="padding: 30px 0 0; "/></a>
       <p>The Rijksmuseum is the national museum of the Netherlands. We tell the story of 800 years of Dutch history, from 1200 to now. In addition, 
       we organize several exhibitions per year from our own collection and with (inter) national loans. Check out our current collection!</p>
-      <!-- <h1 style="padding: 0 0 50px;">Check out Rijksmuseums current collection!</h1>   -->
       <inputPainting v-model:artworks="artworks"/>
   </div>
   <outputPainting :artworks="artworks"/>
@@ -82,6 +81,7 @@ p {
   width: 60%;
   margin: 40px auto 40px;
   text-align: left;
+  line-height: 1.4em;
 }
 
 a {
@@ -94,5 +94,4 @@ a:hover {
   color: lighten(#000, 40%);
   transition: 0.3s;
 }
-
 </style>

@@ -1,6 +1,6 @@
 <template>
     <input type="text" placeholder="Artist Full Name" v-model="artist"/>
-    <button @click="getPainting" :disabled="artist.length == 0">Search Collection</button> 
+    <button @click="getPainting" :disabled="artist.length == 0">Search Collection&nbsp;<i class="fa fa-search"/></button> 
 </template>
 
 <script>
@@ -18,8 +18,7 @@ export default {
   },
   methods: {
     getPainting() {
-      let reqUrl = baseUrl + lang + '/collection?key=' + apiKey + '&involvedMaker=' + this.artist.replaceAll(' ', '+'); 
-      // console.log(reqUrl);
+      let reqUrl = baseUrl + lang + '/collection?key=' + apiKey + '&involvedMaker=' + this.artist.replaceAll(' ', '+');
 
       this.$emit('update:artworks', { loading: true });
       fetch(reqUrl)
@@ -27,16 +26,13 @@ export default {
         .then((data) => {
           console.log(data);
           this.$emit('update:artworks', data);
-        });
-          
+        }); 
       }
-      //Also handle when there is no succes 
     }
   }
 
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 $button: #d55140;
 
@@ -82,7 +78,6 @@ button {
 }
 
 button:hover {
-  // background-color: lighten($button, 10%);
   color: #000;
   background-color: #fff;
   transition: 0.3s;
@@ -93,5 +88,9 @@ button[disabled]:hover {
   background: darken($button, 10%);
   color: darken(#fff, 10%);
   opacity: 0.8;
+}
+
+.fa-search {
+  font-size: 14px;
 }
 </style>

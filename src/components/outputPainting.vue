@@ -5,20 +5,20 @@
             <li v-for="(artwork, index) in artworks.artObjects" v-bind:key="index">
                 <a v-bind:href="artwork.links.web" target="_blank"><h3>{{ artwork.longTitle }}</h3></a>         
                 <a v-bind:href="artwork.links.web" target="_blank">
-                    <img v-if="artwork.hasImage" v-bind:src="artwork.webImage.url"/>
-                    <img v-else src="../assets/building.png" alt="Image not available"/>
+                    <img v-if="artwork.hasImage" v-bind:src="artwork.webImage.url" v-bind:alt="artwork.longTitle"/>
+                    <img v-else src="../assets/no-image-available.png" alt="Image not available"/>
                 </a>
             </li>    
         </ul>
     </div>
     <div v-else-if="artworks.count == 0">
-        <p>No results found.</p>
-        <p>Try typing the artist's full name.</p>
+        <h2>Oops, there are no results found!</h2>
+        <img src="../assets/friends.gif" alt="No results found" style="width: 170px; height: 170px;  object-fit: cover; margin-bottom: 0; border-radius: 50%;"/>
+        <p>We couldn't find anything matching your search. <br/>Try typing the artist's full name.</p>
     </div>
     <div v-else-if="artworks.loading === true">
         <div class="loader"></div>
     </div>
-
 </template>
 
 <script>
@@ -32,6 +32,8 @@ export default {
 p {
     color: black;
     text-align: center;
+    margin-top: 20px;
+    line-height: 1.4em;
 }
 
 img {
